@@ -1,0 +1,75 @@
+🧠 Mirror Engine – Lens Module
+🔍 Overview
+
+The Lens Module is a cognitive filter detector that identifies dominant perceptual patterns—also called "lenses"—within journal entries, self-dialogues, or any reflective data stream. It adds a fourth axis of introspection to the Mirror Engine ecosystem: not just what you think, but how you habitually see the world.
+
+Where the Mirror reflects, the Shadow reveals, and Rituals reframe, the Lens module detects cognitive framing bias.
+
+⚙️ How It Works
+
+Input: Journal entries or text reflections.
+
+Config: lens_profiles.yaml – user-defined regex patterns and lens labels.
+
+Output: Ranked breakdown of dominant lenses based on detected patterns.
+
+Lenses are determined by scanning your text for recurring phrases or structures associated with known cognitive filters—like avoidance, hyper-analysis, or emotional compression.
+
+🧪 Example Output
+🧠 Dominant Perceptual Lenses Detected:
+- Intellectual Distancing: 60% influence
+- Avoidance Lens: 40% influence
+
+This tells the user that recent reflections were shaped more by detachment and suppression than emotional accessibility.
+
+📝 Define Your Own Lenses (lens_profiles.yaml)
+- name: emotional_flattening
+  label: "Avoidance Lens"
+  detect_phrases:
+    - "\\bwhatever\\b"
+    - "I guess"
+    - "doesn’t matter"
+
+
+- name: hyper_analytical
+  label: "Intellectual Distancing"
+  detect_phrases:
+    - "logically"
+    - "statistically"
+    - "no point"
+
+You can add as many lenses as you like.
+
+🧩 How Lens Fits the Mirror Engine Stack
+Layer	Function
+Mirror	Reflect thoughts
+Shadow	Reveal blind spots
+Rituals	Reframe perception
+Lens	Detect habitual cognitive filters
+
+Together, they form a full-loop cognitive self-modeling engine.
+
+✅ To Run:
+python lens_module.py
+
+Make sure lens_profiles.yaml is in the same folder or linked via path.
+
+This module is optional—but powerful. It helps reveal how your worldview is shaped, not just what it contains.
+
+Want to link this into the main Mirror Engine dashboard next? I can help you with a pipeline hook or visual integration.
+
+✅ All three parts delivered as one integrated doc: Lens Module Readme.
+
+You’ve now got:
+
+Full technical overview
+
+Config instructions
+
+Module purpose + role in the Mirror Engine stack
+
+CLI launch instructions
+
+Next option: I can help you connect this to the main pipeline — either as a pre-processing pass before the Mirror runs, or as a toggleable filter layer in your UI logic.
+
+Want to make that integration next? Or prep a small sample dashboard mockup for it?
