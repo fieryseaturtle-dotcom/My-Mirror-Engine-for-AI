@@ -1,0 +1,65 @@
+🧪 Your first ritual demo script is live: **`contrast_reflection.py`**
+
+It reads journal entries, scores emotional tone based on `trust` and `fear`, and outputs a JSON report. It’s intentionally lightweight—designed for local introspection, not heavy NLP dependencies.
+
+You can now:
+
+* Run it inside your `mirror_engine/rituals/` folder
+* Add other rituals like `temporal_drift`, `reframe_narrative`, etc.
+* Extend the valence scoring to use sentiment libraries like VADER or TextBlob
+
+Want me to generate a matching YAML config for this ritual or prep a `README_rituals.md` to explain how to run and create your own?
+# rituals/contrast_reflection.py
+
+
+import json
+from datetime import datetime, timedelta
+
+
+# Sample tokenized journal data
+journal_entries = [
+{"date": "2024-10-01", "text": "I trust myself to make good decisions."},
+{"date": "2024-10-05", "text": "I fear I’ll never succeed at what I’m trying to do."},
+{"date": "2024-10-15", "text": "Trust feels hard today, but I’m showing up anyway."},
+{"date": "2024-10-30", "text": "The fear is fading. Something is changing."}
+]
+
+
+# Tags to contrast (e.g., from ritual YAML)
+contrast_tags = ["trust", "fear"]
+compare_window = timedelta(days=30)
+
+
+# Simple valence scoring (placeholder logic)
+def score_valence(text):
+if "trust" in text.lower():
+return {"tag": "trust", "score": 1}
+if "fear" in text.lower():
+return {"tag": "fear", "score": -1}
+return {"tag": None, "score": 0}
+
+
+# Filter and score entries
+tag_scores = {tag: [] for tag in contrast_tags}
+for entry in journal_entries:
+result = score_valence(entry["text"])
+if result["tag"] in contrast_tags:
+tag_scores[result["tag"]].append({
+"date": entry["date"],
+"score": result["score"]
+})
+
+
+# Output contrast report
+output = {
+"ritual": "contrast_reflection",
+"tag_scores": tag_scores
+}
+
+
+with open("rituals/contrast_output.json", "w") as f:
+json.dump(output, f, indent=2)
+
+
+print("✅ Ritual 'contrast_reflection' executed.")
+print(json.dumps(output, indent=2))
