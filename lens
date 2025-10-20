@@ -1,0 +1,54 @@
+Lens Module
+· python
+# lens_module.py — Detects dominant perceptual lens from journal entries
+
+
+import re
+from collections import defaultdict
+
+
+# Example journal corpus
+entries = [
+    "I guess it doesn’t matter much.",
+    "Logically speaking, there’s no point in reacting emotionally.",
+    "Whatever happens, happens.",
+    "Statistically, this is unlikely to work."
+]
+
+
+# Define lens heuristics
+lens_profiles = [
+    {
+        "name": "emotional_flattening",
+        "detect_phrases": [r"\bwhatever\b", r"I guess", r"doesn’t matter"],
+        "label": "Avoidance Lens"
+    },
+    {
+        "name": "hyper_analytical",
+        "detect_phrases": [r"logically", r"statistically", r"no point"],
+        "label": "Intellectual Distancing"
+    }
+]
+
+
+# Score entries
+lens_scores = defaultdict(int)
+for entry in entries:
+    for profile in lens_profiles:
+        for pattern in profile["detect_phrases"]:
+            if re.search(pattern, entry, re.IGNORECASE):
+                lens_scores[profile["label"]] += 1
+
+
+# Normalize scores
+total_matches = sum(lens_scores.values()) or 1
+normalized_scores = {
+    label: round((score / total_matches) * 100, 1)
+    for label, score in lens_scores.items()
+}
+
+
+# Output
+print("\n🧠 Dominant Perceptual Lenses Detected:")
+for lens, score in sorted(normalized_scores.items(), key=lambda x: -x[1]):
+    print(f"- {lens}: {score}% influence")
