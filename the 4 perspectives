@@ -1,0 +1,85 @@
+Ah yes — *the trinity is forming.*
+You’ve got:
+
+1. 🪞 **Mirror** – reflection (what is)
+2. 🌑 **Shadow** – repression / dissonance (what’s hidden)
+3. 🕯️ **Ritual** – intentional reframing (what could be)
+
+Now you want a **fourth axis** — something that completes the cycle of perception.
+
+Let’s go full meta here. You're not just modeling *what's inside* — you're shaping *how it's seen*. So what’s the missing angle?
+
+---
+
+## 🧭 Fourth Perspective: **Lens**
+
+### → The way you filter the world *before* the mirror even gets a signal.
+
+**Mirror** shows you what you already produced.
+**Shadow** shows you what you’re avoiding.
+**Ritual** helps you change your stance.
+**Lens** shows you how your *default perception* distorts the signal.
+
+It’s the **meta-frame** — your active cognitive bias, schema filters, conceptual compression… the "glasses" you're wearing *before* you even write a word.
+
+---
+
+### 🔎 What does Lens do in the system?
+
+| Component                      | Description                                                                         |
+| ------------------------------ | ----------------------------------------------------------------------------------- |
+| **Cognitive Filter Detection** | Analyzes tone/style over time to detect fixed schemas (e.g., "always skeptical")    |
+| **Compression Heuristics**     | Detects overused metaphors, repeated structures — evidence of cognitive bias        |
+| **Worldview Proximity Map**    | Matches entries to common narrative lenses (e.g., survivor, analyst, rebel, oracle) |
+| **Conceptual Density Scanner** | Identifies overly compressed or abstract language that hides emotional truth        |
+
+---
+
+### 💾 Possible Implementation
+
+You could make `lens_profiles.yaml` like this:
+
+```yaml
+- name: emotional_flattening
+  detect_phrases: ["I guess", "it's fine", "whatever"]
+  trigger_score: > 5
+  lens_label: "avoidance lens"
+
+- name: hyper-analytical
+  detect_phrases: ["therefore", "logically", "statistically"]
+  trigger_score: > 7
+  lens_label: "intellectual distancing"
+```
+
+Then the system says:
+
+> “Detected dominant lens: 🧠 *Hyper-Analytical* — low emotional access, high logic compression.”
+
+Now the mirror shows you *why the reflection feels cold.* Not because of the content, but the lens.
+
+---
+
+### 🧠 Summary: The Four Cognitive Axes
+
+| Name       | Role                       | Tagline                                    |
+| ---------- | -------------------------- | ------------------------------------------ |
+| **Mirror** | Surface reflection         | “What’s here?”                             |
+| **Shadow** | Submerged contradiction    | “What’s hiding?”                           |
+| **Ritual** | Intentional transformation | “What can shift?”                          |
+| **Lens**   | Pre-reflection filter      | “How am I seeing this before I even look?” |
+
+---
+
+Would you like me to draft a **Lens Module README section**, or prototype a detection script like I did with Rituals?
+This piece could be your most *subtle* but *powerful* engine layer.
+You could make lens_profiles.yaml like this:
+
+- name: emotional_flattening
+  detect_phrases: ["I guess", "it's fine", "whatever"]
+  trigger_score: > 5
+  lens_label: "avoidance lens"
+
+- name: hyper-analytical
+  detect_phrases: ["therefore", "logically", "statistically"]
+  trigger_score: > 7
+  lens_label: "intellectual distancing"
