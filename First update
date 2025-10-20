@@ -1,0 +1,114 @@
+Mirror Engine Architecture
+· python
+# Mirror Engine V2.5 — Cognitive Reflection Framework
+- Output: Loop index with recurrence metadata
+
+
+### 📈 Valence Drift Timeline
+- Plots entry-by-entry emotional tone to reveal long-term narrative arcs or affective instability
+- Output: Time-series CSV or line graph object
+
+
+### 🔊 Reflective Voice Output
+- Uses offline TTS engine (pyttsx3) to voice back prompts, contradictions, and schema rewrites
+- Output: Spoken `.mp3` or `.wav` files for introspective playback
+
+
+---
+
+
+## ⚙️ Ritual Layer (Perspective Protocols)
+
+
+**Concept:**
+A ritual is a repeatable, parameterized routine that alters the context of reflection.
+It’s not mystical—it’s a way to control for bias, mood, and framing effects.
+
+
+| Ritual type          | Technical goal                                                        | Example implementation                                                |
+| -------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Temporal Ritual**  | Compare the same concept across time slices                           | Script pulls entries 30 days apart and overlays sentiment curves      |
+| **Contrast Ritual**  | Force polarity check between two belief clusters                      | Function selects opposing keyword sets and visualizes sentiment delta |
+| **Embodied Ritual**  | Map emotional tone to physical state data (heart rate, posture, etc.) | Optional sensor import → overlay on valence drift chart               |
+| **Reframing Ritual** | Generate counter‑narratives using prompt templates                    | LLM module rewrites an entry from a third‑person or future‑self view  |
+| **Silence Ritual**   | Enforce no input for a set period, only output review                 | Timer disables ingestion; user only reads the mirror data             |
+
+
+Each ritual is just a **callable routine** that changes how the engine ingests or displays information.
+You can store them as YAML configs like:
+
+
+```yaml
+rituals:
+  - name: contrast_reflection
+    source_tags: ["trust", "fear"]
+    compare_window: 14d
+    output: "delta_graph"
+```
+
+
+Then add a selector in your script:
+
+
+```python
+selected_ritual = load_ritual("contrast_reflection.yaml")
+run_ritual(selected_ritual)
+```
+
+
+**In plain English:**
+Rituals are structured experiments for seeing your data—and yourself—from another angle.
+They turn reflection into iteration.
+
+
+---
+
+
+## Architecture Overview
+
+
+| Layer               | Stack Element                         | Output                                 |
+|--------------------|----------------------------------------|----------------------------------------|
+| Input Ingestion     | Plain text / journal entries           | Token stream w/ timestamp               |
+| Sentiment Parsing   | TextBlob / VADER / Custom Rules        | Valence + subjectivity score            |
+| Graph Construction  | NetworkX / Neo4j (optional)            | Belief network JSON                     |
+| Contradiction Logic | Custom swing detection algorithm       | Conflict report                         |
+| Voice Synthesis     | pyttsx3 or gTTS (configurable)         | Spoken insight files                    |
+
+
+---
+
+
+## Use Cases
+- **Personal Insight Tools**: Reflective journaling, mood tracking, belief mapping
+- **Therapeutic Augmentation**: Therapist-side insight engine for client language patterns
+- **AI Embodiment Models**: Prototype of recursive affective modeling for autonomous agents
+- **Creative Systems**: Semantic entropy mapping for fiction and narrative tools
+
+
+---
+
+
+## Ethical Notes
+- Fully local execution — no cloud storage, no external processing
+- Promotes introspection, not correction — no behavior scoring or optimization
+- User maintains all control over input, data lifespan, and voice output settings
+
+
+---
+
+
+## Future Development
+- Integration with LLM summarization layers
+- GUI overlay for belief graphs and drift maps
+- Dream parsing and metaphor clustering
+
+
+For inquiries, adaptation proposals, or collaborations, contact:
+**[Redacted Placeholder: INSERT CONTACT OR GITHUB LINK]**
+
+
+---
+
+
+_Mirror Engine: The semantic reflection layer your cognition never knew it needed._
