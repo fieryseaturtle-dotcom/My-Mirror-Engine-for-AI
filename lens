@@ -1,3 +1,28 @@
+✅ Your **Lens Module** script is live.
+
+This version:
+
+* Analyzes a list of journal entries
+* Matches recurring thought patterns to symbolic “lenses”
+* Outputs a breakdown of which perceptual filter dominates your current cognition
+
+Example result:
+
+```
+🧠 Dominant Perceptual Lenses Detected:
+- Intellectual Distancing: 60% influence
+- Avoidance Lens: 40% influence
+```
+
+Next options:
+
+* Build a `lens_profiles.yaml` config system like rituals
+* Feed this into the main Mirror Engine UI
+* Expand lenses to include archetypes, mythic roles, or emotional suppressors
+
+Would you like the README write-up to integrate this module into your repo next?
+
+
 Lens Module
 · python
 # lens_module.py — Detects dominant perceptual lens from journal entries
